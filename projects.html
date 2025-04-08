@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -56,9 +57,44 @@
       margin-top: 1rem;
     }
 
-    @media (max-width: 500px) {
+    button {
+      display: block;
+      margin: 2rem auto 0 auto;
+      padding: 10px 20px;
+      background-color: #5e17eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4914c4;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+      }
+
+      .project-desc {
+        font-size: 0.9rem;
+      }
+
+      button {
+        width: 100%;
+        font-size: 1rem;
       }
     }
   </style>
@@ -69,7 +105,6 @@
 
   <div class="projects-container">
 
-    <!-- Project 1 -->
     <div class="project-card">
       <div class="project-title">Comprehensive Analysis of Movie Success Factors Using IMDb Data</div>
       <div class="project-desc">
@@ -82,7 +117,6 @@
       </div>
     </div>
 
-    <!-- Project 2 -->
     <div class="project-card">
       <div class="project-title">Wi-Fi WPA/2 Handshake Capturing & Cracking Key</div>
       <div class="project-desc">
@@ -96,9 +130,8 @@
     </div>
 
   </div>
-  <button onclick="history.back()" style="margin: 20px; padding: 10px 20px; background-color: #5e17eb; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    ← Back
-  </button>
-  
+
+  <button onclick="history.back()">← Back</button>
+
 </body>
 </html>
