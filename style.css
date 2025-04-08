@@ -306,3 +306,69 @@ section {
         color: white;
     }
 }
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .main-container .image {
+    width: 80%;
+    margin-left: 0;
+  }
+
+  .main-container .image img {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  .main-container .content {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .typewriter {
+    font-size: 1.5rem;
+  }
+
+  nav .links {
+    display: none;
+  }
+
+  nav .hamburg {
+    display: block;
+    font-size: 1.8rem;
+  }
+
+  .dropdown {
+    top: 10vh;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .dropdown .links a {
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-links i {
+    margin: 8px;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .btn a button {
+    width: 80%;
+  }
+}
