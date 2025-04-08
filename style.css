@@ -141,4 +141,175 @@ nav {
   cursor: pointer;
 }
 
-/
+/* MAIN SECTION */
+section {
+  width: 100%;
+  min-height: 90vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.image {
+  width: 50%;
+  text-align: center;
+}
+
+.image img {
+  width: 60%;
+  max-width: 300px;
+  border-radius: 50%;
+}
+
+.content {
+  width: 40%;
+  min-height: 100px;
+  color: #2c2c2c;
+}
+
+.content h1 {
+  font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
+}
+
+.content h1 span {
+  color: #5e17eb;
+  text-shadow: 0 0 10px #5e17eb;
+}
+
+.typewriter {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.typewriter span {
+  color: #5e17eb;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.typewriter span::before {
+  content: "Data Analyst";
+  animation: words 15s infinite;
+}
+
+.typewriter span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid #2c2c2c;
+  animation: cursor 0.6s step-end infinite;
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes words {
+  0%, 33% {
+    content: "Data Analyst";
+  }
+  34%, 66% {
+    content: "Machine Learning Engineer";
+  }
+  67%, 100% {
+    content: "AI Enthusiast";
+  }
+}
+
+.content p {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent;
+  border: 2px solid #5e17eb;
+  border-radius: 50%;
+  color: #5e17eb;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links i:hover {
+  transform: scale(1.3);
+  color: white;
+  background-color: #5e17eb;
+  box-shadow: 0 0 10px #5e17eb;
+}
+
+.content button {
+  width: 50%;
+  height: 6vh;
+  margin: 30px 0;
+  background-color: #5e17eb;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.content button:hover {
+  transform: scale(1.05);
+  color: #5e17eb;
+  background-color: transparent;
+  border: 2px solid #5e17eb;
+  box-shadow: 0 0 15px #5e17eb;
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 884px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .hamburg {
+    display: block;
+  }
+
+  .main-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image,
+  .content {
+    width: 90%;
+  }
+
+  .content button {
+    width: 80%;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
