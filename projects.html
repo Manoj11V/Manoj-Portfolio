@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f4ff, #e3e9ff);
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5e17eb;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 5px rgba(94, 23, 235, 0.2);
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(94, 23, 235, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(94, 23, 235, 0.2);
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      color: #5e17eb;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💼 My Projects</h1>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-title">Comprehensive Analysis of Movie Success Factors Using IMDb Data</div>
+      <div class="project-desc">
+        <div class="section">
+          <strong>Insights on Directors, Genres, and Ratings:</strong> Analyzed gross earnings, movie counts, and average gross by directors.
+        </div>
+        <div class="section">
+          <strong>Factors Influencing Success:</strong> Investigated runtime, star influence, and seasonal impacts, concluding runtime and star presence affect ratings. Seasonal analysis was limited due to lack of granular release date data.
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-title">Wi-Fi WPA/2 Handshake Capturing & Cracking Key</div>
+      <div class="project-desc">
+        <div class="section">
+          <strong>Capture WPA/WPA2 Handshake:</strong> Used <code>airodump-ng</code> to monitor the target network and capture the 4-way handshake, optionally deauthenticating clients with <code>aireplay-ng</code> to speed up the process.
+        </div>
+        <div class="section">
+          <strong>Crack Pre-Shared Key:</strong> Analyzed the captured handshake using <code>aircrack-ng</code> with a dictionary file to decrypt and reveal the Wi-Fi password.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button onclick="history.back()" style="margin: 20px; padding: 10px 20px; background-color: #5e17eb; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    ← Back
+  </button>
+  
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Certificates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5e17eb;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 5px rgba(94, 23, 235, 0.2);
+    }
+
+    .cert-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    .cert-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cert-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #5e17eb;
+    }
+
+    .cert-card h3 {
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-card a {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cert-card a:nth-child(2) {
+      background-color: #5e17eb;
+      color: #fff;
+    }
+
+    .cert-card a:nth-child(2):hover {
+      background-color: #3a0ecc;
+    }
+
+    .cert-card a:nth-child(3) {
+      background-color: transparent;
+      color: #5e17eb;
+      border: 2px solid #5e17eb;
+    }
+
+    .cert-card a:nth-child(3):hover {
+      background-color: #5e17eb;
+      color: white;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎓 My Certificates</h1>
+  <div class="cert-container" id="certificates"></div>
+
+  <script>
+    const folderPath = 'certificates/';
+    const certificateFiles = [
+      "ACADEMIC EXCELLENCE -SSMHS.pdf",
+      "ACADEMIC EXCELLENCE-SSMHS.pdf",
+      "CHESS -ADHIYAMAN.pdf",
+      "CHESS -ADHIYAMAN2.pdf",
+      "CHESS -ADHIYAMAN3.pdf",
+      "CHESS ANNA UNIVERSITY ZONAL.pdf",
+      "CHESS -AURCC.pdf",
+      "CHESS HARUR ZONAL 2.pdf",
+      "CHESS -HARUR ZONAL.pdf",
+      "CHESS MANSAAROVAR.pdf",
+      "CHESS VIVEKANANDA.pdf",
+      "CYBER SECURITY ACADEMOR.pdf",
+      "CYBER SECURITY ACADEMOR2.pdf",
+      "CYBER SECURITY NIT.pdf",
+      "CYBER SECURITY SLYTHERIN.pdf",
+      "DSA GREAT LEARNING.pdf",
+      "EMPLOYABILITY SKILLS -TITAN LEAP.pdf",
+      "ENTREPRENUERSHIP.pdf",
+      "Foundations of Cybersecurity GOOGLE.pdf",
+      "INSPIRE INTERNSHIP.pdf",
+      "iTech HackFest Participation Certificate-2023.pdf",
+      "KARATE.pdf",
+      "MANAVAI MARATHON.pdf",
+      "MODI MARATHON.pdf",
+      "NDLI CLUB.pdf",
+      "Networking Essentials CISCO.pdf",
+      "RELAY 2 -AURCC.pdf",
+      "RELAY -AURCC.pdf",
+      "MICROSOFT EXCEL ADVANCED LEVEL.pdf",
+      "MICROSOFT POWERPOINT ADVANCED LEVEL.pdf"
+    ];
+
+    const container = document.getElementById('certificates');
+
+    certificateFiles.forEach(file => {
+      const displayName = file
+        .replace('.pdf', '')
+        .replace(/[_-]/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+
+      const card = document.createElement('div');
+      card.className = 'cert-card';
+
+      card.innerHTML = `
+        <h3>${displayName}</h3>
+        <a href="${folderPath + file}" target="_blank">View</a>
+        <a href="${folderPath + file}" download>Download</a>
+      `;
+      
+      container.appendChild(card);
+    });
+  </script>
+   <button onclick="history.back()" style="margin: 20px; padding: 10px 20px; background-color: #5e17eb; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    ← Back
+  </button>
+  
+</body>
+</html>
