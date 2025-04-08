@@ -26,8 +26,8 @@
         </div>
         <div class="dropdown">
             <div class="links">
-                <a href="">Home</a>
-                <a href="">About</a>
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certificates.html">Certificates</a> 
                 <!-- <a href="">Blogs</a>
@@ -68,13 +68,15 @@
           AOS.init({offset:0});
         </script>
         <script>
-  function hamburg() {
-    document.querySelector(".dropdown").classList.add("active");
-  }
-  function cancel() {
-    document.querySelector(".dropdown").classList.remove("active");
-  }
-</script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
 
 </body>
 </html>
