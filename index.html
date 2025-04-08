@@ -7,6 +7,54 @@
     <title>Manoj V Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Responsive tweaks */
+        @media screen and (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .image img {
+                width: 80% !important;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                width: 100% !important;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0 10px;
+            }
+
+            .links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                background: #fff;
+                padding: 10px 0;
+            }
+
+            .dropdown .links {
+                display: flex !important;
+            }
+
+            .hamburg {
+                display: block !important;
+                font-size: 24px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -19,19 +67,17 @@
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="About.html">About</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projects.html">Projects</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="certificates.html">Certificates</a></div>
-                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div> -->
                 <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact us.html">Contact Us</a></div> 
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
         <div class="dropdown">
             <div class="links">
-                <a href="">Home</a>
-                <a href="">About</a>
+                <a href="index.html">Home</a>
+                <a href="About.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certificates.html">Certificates</a> 
-                <!-- <a href="">Blogs</a>
-                <a href="">Contact Us</a> -->
+                <a href="contact us.html">Contact Us</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
@@ -44,10 +90,7 @@
                 <div class="content">
                     <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Manoj</span> </h1>
                     <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">An enthusiastic Data Analyst who can identifying progressive insights that will help
-                        businesses make better and crucial decisions efficiently. Skilled in tools like SQL, Python,
-                        and Power BI, creating clear dashboards,reports, and analysis.
-                        </p>
+                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">An enthusiastic Data Analyst who can identify progressive insights to help businesses make crucial decisions efficiently. Skilled in tools like SQL, Python, and Power BI, creating clear dashboards, reports, and analysis.</p>
                     <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
                         <a href="https://github.com/Manoj11V" target="_blank" ><i class="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/manojvelumani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -55,10 +98,9 @@
                         <a href="mailto:manojpan2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                     <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                        <a href="M:\Project\PortFolio\Amelia Portfolio-20250407T093256Z-001\Manoj Portfolio\Manoj V_Resume.pdf" download>
+                        <a href="Manoj V_Resume.pdf" download>
                             <button>Download CV</button>
-                          </a>
-                          
+                        </a>
                     </div>
                 </div>
             </div>
