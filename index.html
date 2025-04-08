@@ -1,324 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manoj V Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
-    }
-
-    nav {
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #2c2c2c;
-    }
-
-    .logo span {
-      color: #5e17eb;
-    }
-
-    .links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .links a {
-      text-decoration: none;
-      color: #2c2c2c;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .links a:hover {
-      color: #5e17eb;
-    }
-
-    .contact-btn a {
-      padding: 8px 16px;
-      border: 2px solid #5e17eb;
-      border-radius: 30px;
-      color: #5e17eb;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .contact-btn a:hover {
-      background-color: #5e17eb;
-      color: white;
-    }
-
-    .hamburg {
-      display: none;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .dropdown {
-      display: none;
-      background-color: white;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transform: translateY(-500px);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .dropdown .links {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    .dropdown .links a {
-      padding: 10px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .main-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      min-height: 90vh;
-      padding: 40px 20px;
-    }
-
-    .image img {
-      width: 300px;
-      border-radius: 50%;
-    }
-
-    .content {
-      max-width: 500px;
-      color: #2c2c2c;
-    }
-
-    .content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .content h1 span {
-      color: #5e17eb;
-      text-shadow: 0 0 8px #5e17eb;
-    }
-
-    .typewriter {
-      font-weight: 600;
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    .typewriter span {
-      color: #5e17eb;
-      font-size: 2rem;
-      position: relative;
-    }
-
-    .typewriter span::before {
-      content: "Data Analyst";
-      animation: words 10s infinite;
-    }
-
-    .typewriter span::after {
-      content: "";
-      position: absolute;
-      width: calc(100% + 6px);
-      height: 100%;
-      border-left: 2px solid #2c2c2c;
-      animation: cursor 0.6s step-end infinite;
-    }
-
-    @keyframes words {
-      0%, 33% { content: "Data Analyst"; }
-      34%, 66% { content: "ML Engineer"; }
-      67%, 100% { content: "AI Enthusiast"; }
-    }
-
-    @keyframes cursor {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    .content p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .social-links i {
-      width: 40px;
-      height: 40px;
-      border: 2px solid #5e17eb;
-      color: #5e17eb;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s ease;
-    }
-
-    .social-links i:hover {
-      background-color: #5e17eb;
-      color: white;
-      transform: scale(1.2);
-    }
-
-    .btn button {
-      padding: 10px 20px;
-      background-color: #5e17eb;
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .btn button:hover {
-      background-color: white;
-      color: #5e17eb;
-      border: 2px solid #5e17eb;
-    }
-
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
-      .nav-container {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 10px 20px;
-      }
-
-      .links {
-        display: none;
-      }
-
-      .hamburg {
-        display: block;
-      }
-
-      .main-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .image img {
-        width: 70%;
-        max-width: 250px;
-      }
-
-      .content h1 {
-        font-size: 2rem;
-      }
-
-      .typewriter span {
-        font-size: 1.5rem;
-      }
-
-      .dropdown.active {
-        transform: translateY(0);
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Manoj V Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <div class="logo"><span>Manoj Velumani</span></div>
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="certificates.html">Certificates</a>
-        <div class="contact-btn"><a href="contact us.html">Contact Me</a></div>
-      </div>
-      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-    </div>
-    <div class="dropdown" id="dropdown">
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="certificates.html">Certificates</a>
-        <a href="contact us.html">Contact Me</a>
-        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-      </div>
-    </div>
-  </nav>
-
-  <section>
-    <div class="main-container">
-      <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-        <img src="Manoj V.jpg" alt="Manoj V">
-      </div>
-      <div class="content">
-        <h1 data-aos="fade-left">Hey I'm <span>Manoj</span></h1>
-        <div class="typewriter" data-aos="fade-right">I'm a <span></span></div>
-        <p data-aos="flip-up">
-          An enthusiastic Data Analyst who can identify progressive insights to help businesses make crucial decisions efficiently. Skilled in tools like SQL, Python, and Power BI, creating clear dashboards, reports, and analysis.
-        </p>
-        <div class="social-links" data-aos="flip-down">
-          <a href="https://github.com/Manoj11V" target="_blank"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/manojvelumani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/s_o_l_o_king_mj/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-          <a href="mailto:manojpan2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Manoj Velumani</span> 
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="About.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projects.html">Projects</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="certificates.html">Certificates</a></div>
+                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div> -->
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact us.html">Contact Us</a></div> 
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
-        <div class="btn" data-aos="zoom-out-left">
-          <a href="Manoj V_Resume.pdf" download><button>Download CV</button></a>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="certificates.html">Certificates</a> 
+                <!-- <a href="">Blogs</a>
+                <a href="">Contact Us</a> -->
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ offset: 0 });
-
-    function hamburg() {
-      document.getElementById("dropdown").classList.add("active");
-    }
-
-    function cancel() {
-      document.getElementById("dropdown").classList.remove("active");
-    }
-  </script>
+    </nav>
+        <section>
+            <div class="main-container">
+                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                    <img src="Manoj V.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Manoj</span> </h1>
+                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">An enthusiastic Data Analyst who can identifying progressive insights that will help
+                        businesses make better and crucial decisions efficiently. Skilled in tools like SQL, Python,
+                        and Power BI, creating clear dashboards,reports, and analysis.
+                        </p>
+                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                        <a href="https://github.com/Manoj11V" target="_blank" ><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/manojvelumani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/s_o_l_o_king_mj/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:manojpan2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                        <a href="M:\Project\PortFolio\Amelia Portfolio-20250407T093256Z-001\Manoj Portfolio\Manoj V_Resume.pdf" download>
+                            <button>Download CV</button>
+                          </a>
+                          
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
 </body>
 </html>
