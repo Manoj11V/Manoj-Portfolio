@@ -2,10 +2,10 @@
 
 /* Reset + Base */
 * {
-  padding: 0;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -15,7 +15,6 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden;
   background: linear-gradient(to right, #e0eafc, #cfdef3);
 }
 
@@ -24,21 +23,24 @@ nav {
   width: 100%;
   height: 10vh;
   position: sticky;
-  z-index: 10;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .nav-container {
-  width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  height: 100%;
+  padding: 0 20px;
 }
 
 .logo {
-  color: #2c2c2c;
   font-size: 2rem;
   font-weight: bold;
+  color: #2c2c2c;
 }
 
 .logo span {
@@ -46,24 +48,13 @@ nav {
   text-shadow: 0 0 2px #5e17eb;
 }
 
-.hamburg,
-.cancel {
-  cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  color: #2c2c2c;
-  font-size: 2rem;
-  display: none;
-}
-
-.nav-container .links {
+.links {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
-.nav-container .links a {
+.links a {
   position: relative;
   font-size: 1.2rem;
   color: #2c2c2c;
@@ -72,7 +63,7 @@ nav {
   transition: 0.3s ease-in-out;
 }
 
-.nav-container .links a::before {
+.links a::before {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -83,240 +74,71 @@ nav {
   transition: width 0.3s ease;
 }
 
-.nav-container .links a:hover::before {
+.links a:hover::before {
   width: 100%;
 }
 
-.nav-container .contact-btn {
-  background-color: transparent;
-  padding: 6px 24px;
+.contact-btn a {
+  padding: 6px 16px;
   border-radius: 30px;
   border: 2px solid #5e17eb;
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-container .contact-btn a {
   color: #5e17eb;
   text-decoration: none;
   font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.nav-container .contact-btn:hover {
+.contact-btn a:hover {
   background-color: #5e17eb;
-}
-
-.nav-container .contact-btn:hover a {
   color: white;
 }
 
+.hamburg {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* DROPDOWN */
 .dropdown {
   position: absolute;
   top: 10vh;
-  transform: translateY(-500px);
+  left: 0;
   width: 100%;
-  background-color: #fff;
-  backdrop-filter: brightness(40%) blur(3px);
-  box-shadow: 0 0 20px #2c2c2c;
-  transition: transform 0.3s ease;
-  z-index: 100;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-500px);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.dropdown.active {
+  transform: translateY(0);
 }
 
 .dropdown .links {
-  display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
 
 .dropdown .links a {
-  color: #5e17eb;
-  padding: 15px 0;
+  padding: 10px;
+  width: 100%;
   text-align: center;
-  display: block;
-  text-decoration: none;
-  transition: background 0.3s;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #5e17eb;
 }
 
 .dropdown .links a:hover {
   background-color: #f3f3f3;
-  width: 100%;
 }
 
-section {
-  width: 100%;
-  min-height: 90vh;
-}
-
-.main-container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 2rem;
-}
-
-.main-container .image {
-  width: 50%;
-  z-index: 0;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.main-container .image img {
-  width: 60%;
-  max-width: 300px;
-  border-radius: 50%;
-}
-
-.main-container .content {
-  color: #2c2c2c;
-  width: 40%;
-  min-height: 100px;
-}
-
-.content h1 {
-  font-size: clamp(1rem, 2rem + 5vw, 3rem);
-}
-
-.content h1 span {
-  color: #5e17eb;
-  text-shadow: 0 0 10px #5e17eb;
-}
-
-.typewriter {
-  font-weight: 600;
-  font-size: clamp(1rem, 1rem + 5vw, 2rem);
-}
-
-.typewriter span {
-  color: #5e17eb;
-  font-size: 2.5rem;
-  text-shadow: 0 0 0px #5e17eb;
-  position: relative;
-  display: inline-block;
-}
-
-.typewriter span::before {
-  content: "Data Analyst";
-  animation: words 15s infinite;
-}
-
-.typewriter span::after {
-  content: "";
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid #2c2c2c;
-  animation: cursor 0.6s step-end infinite;
-}
-
-@keyframes cursor {
-  50% {
-    border-color: transparent;
-  }
-}
-
-@keyframes words {
-  0%, 33% {
-    content: "Data Analyst";
-  }
-  34%, 66% {
-    content: "Machine Learning Engineer";
-  }
-  67%, 100% {
-    content: "AI Enthusiast";
-  }
-}
-
-.content p {
-  font-size: 1rem;
-  margin: 15px 0;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.social-links i {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: transparent;
-  border: 2px solid #5e17eb;
-  border-radius: 50%;
-  color: #5e17eb;
+.cancel {
   font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.social-links i:hover {
-  transform: scale(1.3);
-  color: white;
-  background-color: #5e17eb;
-  box-shadow: 0 0 10px #5e17eb;
-}
-
-.content button {
-  width: 50%;
-  height: 6vh;
-  margin: 30px 0;
-  background-color: #5e17eb;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-.content button:hover {
-  transform: scale(1.05);
   color: #5e17eb;
-  background-color: transparent;
-  border: 2px solid #5e17eb;
-  box-shadow: 0 0 15px #5e17eb;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-/* 🔁 RESPONSIVE */
-@media (max-width: 884px) {
-  .main-container {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .main-container .image,
-  .main-container .content {
-    width: 90%;
-    margin: auto;
-  }
-
-  nav .links {
-    display: none;
-  }
-
-  .hamburg {
-    display: block;
-  }
-
-  .cancel {
-    display: block;
-    color: #2c2c2c;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .content button {
-    width: 80%;
-  }
-}
+/
