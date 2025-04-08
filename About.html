@@ -39,7 +39,19 @@
     .highlight {
       color: #5e17eb;
       font-weight: 600;
+    } 
+    .about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
     }
+}
+
 
     @media (max-width: 600px) {
       .about-container {
