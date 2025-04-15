@@ -19,7 +19,6 @@
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="About.html">About</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projects.html">Projects</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="certificates.html">Certificates</a></div>
-                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div> -->
                 <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact us.html">Contact Us</a></div> 
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
@@ -30,53 +29,121 @@
                 <a href="About.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certificates.html">Certificates</a> 
-                <!-- <a href="">Blogs</a>
-                <a href="">Contact Us</a> -->
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
     </nav>
-        <section>
-            <div class="main-container">
-                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                    <img src="Manoj V.jpg" alt="">
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="Manoj V.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Manoj</span> </h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">An enthusiastic Data Analyst who can identifying progressive insights that will help
+                    businesses make better and crucial decisions efficiently. Skilled in tools like SQL, Python,
+                    and Power BI, creating clear dashboards,reports, and analysis.
+                </p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/Manoj11V" target="_blank" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/manojvelumani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/s_o_l_o_king_mj/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:manojpan2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                 </div>
-                <div class="content">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Manoj</span> </h1>
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">An enthusiastic Data Analyst who can identifying progressive insights that will help
-                        businesses make better and crucial decisions efficiently. Skilled in tools like SQL, Python,
-                        and Power BI, creating clear dashboards,reports, and analysis.
-                        </p>
-                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                        <a href="https://github.com/Manoj11V" target="_blank" ><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/manojvelumani/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/s_o_l_o_king_mj/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="mailto:manojpan2004@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                        <a href="M:\Project\PortFolio\Amelia Portfolio-20250407T093256Z-001\Manoj Portfolio\Manoj V_Resume.pdf" download>
-                            <button>Download CV</button>
-                          </a>
-                          
-                    </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <a href="M:\Project\PortFolio\Amelia Portfolio-20250407T093256Z-001\Manoj Portfolio\Manoj V_Resume.pdf" download>
+                        <button>Download CV</button>
+                    </a>
                 </div>
             </div>
-        </section>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init({offset:0});
-        </script>
+        </div>
+    </section>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-            function hamburg() {
-  document.querySelector(".dropdown").classList.add("active");
-}
-function cancel() {
-  document.querySelector(".dropdown").classList.remove("active");
-}
+      AOS.init({offset:0});
+    </script>
 
-        </script>
+    <!-- Dropdown Toggle JavaScript -->
+    <script>
+        // Toggle for the hamburger menu
+        function hamburg() {
+            document.querySelector(".dropdown").classList.add("active");
+        }
 
+        // Close the dropdown menu
+        function cancel() {
+            document.querySelector(".dropdown").classList.remove("active");
+        }
+    </script>
 
+    <style>
+        /* Styling for Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 10vh;
+            width: 100%;
+            background-color: #fff;
+            backdrop-filter: brightness(40%) blur(3px);
+            box-shadow: 0 0 20px #2c2c2c;
+            z-index: 100;
+            transform: translateY(-500px);
+            transition: transform 0.3s ease;
+        }
+
+        /* Show dropdown menu when active */
+        .dropdown.active {
+            transform: translateY(0);
+            display: block;
+        }
+
+        .dropdown .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dropdown .links a {
+            color: #5e17eb;
+            padding: 15px 0;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            transition: background 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .dropdown .links a:hover {
+            background-color: #f3f3f3;
+            width: 100%;
+        }
+
+        .hamburg, .cancel {
+            cursor: pointer;
+            font-size: 2rem;
+        }
+
+        /* Hide the hamburger menu when active */
+        .hamburg {
+            display: block;
+        }
+
+        .cancel {
+            display: none;
+        }
+
+        /* Show cancel icon when dropdown is active */
+        .dropdown.active .cancel {
+            display: block;
+        }
+
+        .dropdown.active .hamburg {
+            display: none;
+        }
+    </style>
 </body>
 </html>
