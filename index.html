@@ -80,21 +80,57 @@
     </script>
 
     <style>
-        /* Styling for Dropdown */
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling for Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .links {
+            display: flex;
+        }
+
+        .link {
+            margin: 0 15px;
+        }
+
+        .link a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .hamburg {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+
         .dropdown {
             display: none;
             position: absolute;
-            top: 10vh;
+            top: 0;
             width: 100%;
-            background-color: #fff;
-            backdrop-filter: brightness(40%) blur(3px);
-            box-shadow: 0 0 20px #2c2c2c;
+            background-color: #333;
             z-index: 100;
             transform: translateY(-500px);
             transition: transform 0.3s ease;
         }
 
-        /* Show dropdown menu when active */
         .dropdown.active {
             transform: translateY(0);
             display: block;
@@ -108,41 +144,54 @@
         }
 
         .dropdown .links a {
-            color: #5e17eb;
-            padding: 15px 0;
+            color: white;
+            padding: 10px 0;
             text-align: center;
             display: block;
             text-decoration: none;
             transition: background 0.3s;
-            font-size: 1.2rem;
         }
 
         .dropdown .links a:hover {
-            background-color: #f3f3f3;
+            background-color: #444;
             width: 100%;
-        }
-
-        .hamburg, .cancel {
-            cursor: pointer;
-            font-size: 2rem;
-        }
-
-        /* Hide the hamburger menu when active */
-        .hamburg {
-            display: block;
         }
 
         .cancel {
             display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
         }
 
-        /* Show cancel icon when dropdown is active */
+        /* Show the cancel icon when dropdown is active */
         .dropdown.active .cancel {
             display: block;
         }
 
-        .dropdown.active .hamburg {
-            display: none;
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .hamburg {
+                display: block;
+            }
+
+            .links {
+                display: none;
+            }
+
+            .dropdown.active {
+                display: block;
+            }
+
+            .dropdown .links {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cancel {
+                margin-left: auto;
+                padding: 10px;
+            }
         }
     </style>
 </body>
